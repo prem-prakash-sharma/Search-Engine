@@ -3,7 +3,7 @@ const app = express();
 const port = 3000;
 const morgan = require("morgan");
 const connectToDatabase = require("./db.config");
-const Data = require("./models/data.model");
+const Data = require("./models/data.model.js");
 
 connectToDatabase();
 
