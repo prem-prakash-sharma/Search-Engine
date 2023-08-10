@@ -3,7 +3,17 @@ const app = express();
 const port = 3000;
 const morgan = require("morgan");
 const connectToDatabase = require("./db.config");
-const Data = require("./models/data.model.js");
+const mongoose = require("mongoose");
+
+// Define the schema for the "data" collection
+const dataSchema = new mongoose.Schema({
+  title: String,
+  description: String,
+  url: String,
+});
+
+// Create the "data" model with the schema
+const Data = mongoose.model("data", dataSchema);
 
 connectToDatabase();
 
